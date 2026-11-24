@@ -1,0 +1,10 @@
+node_modules/
+dist/
+release/
+apps/update-server/mods/
+coverage/
+*.tsbuildinfo
+*.log
+.env
+.env.*
+!.env.example

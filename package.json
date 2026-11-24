@@ -1,0 +1,32 @@
+{
+  "name": "glauncher",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": "24.x",
+    "npm": "11.x"
+  },
+  "packageManager": "npm@11.12.1",
+  "scripts": {
+    "install:electron": "install-electron",
+    "check": "biome ci . && npm run typecheck && npm test",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "typecheck": "npm run typecheck --workspaces",
+    "build": "npm run build --workspaces",
+    "test": "npm test --workspaces",
+    "start:client": "npm run start --workspace @glauncher/client",
+    "start:server": "npm run start --workspace @glauncher/update-server",
+    "package:win": "npm run package:win --workspace @glauncher/client",
+    "package:setup": "npm run package:setup --workspace @glauncher/client",
+    "package:server": "npm run package:win --workspace @glauncher/update-server"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.8",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}

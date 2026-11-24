@@ -1,0 +1,15 @@
+{
+  "name": "@glauncher/update-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "pretest": "npm run build",
+    "test": "node --test",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "package:win": "npm run build && node packaging/package-win.mjs"
+  }
+}
